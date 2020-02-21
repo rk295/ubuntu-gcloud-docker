@@ -13,6 +13,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint /usr/local/bin/
+COPY .bashrc /root/.bashrc
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 CMD ["--help"]
