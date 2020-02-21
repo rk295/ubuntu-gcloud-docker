@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+BLOCK="${BLOCK:-}"
+SHELL="${1:-}"
+
+if [[ -n "$BLOCK" ]]; then
+    echo "blocking"
+    tail -f /dev/null
+fi
+
+if [[ "$SHELL" == "bash" ]]; then
+    exec bash
+fi
+
+gcloud $@

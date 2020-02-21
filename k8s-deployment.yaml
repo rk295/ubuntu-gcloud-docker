@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: ubuntu-gcloud
+  name: ubuntu-gcloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu-gcloud
+  template:
+    metadata:
+      labels:
+        app: ubuntu-gcloud
+    spec:
+      containers:
+      - name: ubuntu-gcloud
+        image: rk295/ubuntu-gcloud
+        resources:
+          requests:
+            cpu: 50m
+            ephemeral-storage: 1Ki
+            memory: 256Mi
+          limits:
+            cpu: 100m
+            ephemeral-storage: 0.1Gi
+            memory: 512Mi
+        env:
+        - name: BLOCK
+          value: true
+      restartPolicy: Always
