@@ -1,5 +1,7 @@
 # `ubuntu-gcloud`
 
+[![](https://images.microbadger.com/badges/version/rk295/ubuntu-gcloud.svg)](https://hub.docker.com/repository/docker/rk295/ubuntu-gcloud/general)
+
 This is a Docker container based off the latest `ubuntu` container, with the latest `gcloud` tools installed.
 
 You can run it in a variety of ways.
